@@ -1,3 +1,4 @@
+#!/usr/bin/env Rscript
 ##
 ####
 ######
@@ -6,8 +7,17 @@
 ####
 ##
 	print("hello, this is some linear model stuff!!")
+         
+# Add the directory path of data_1/data_master_1.csv file
+        wd <- getwd()
+        setwd("../../")
+        parent <- getwd()
+        setwd(wd)
+        print(parent)
+        
+# Load the data file
 
-	dataMaster <- read.csv("/home/dc/myProjects/learn/learnCode/dataScience_stockMarket/data_1/data_master_1.csv")
+	dataMaster <- read.csv(file.path(parent, "data_1/data_master_1.csv"))
 
 	attach(dataMaster)
 
@@ -42,14 +52,24 @@
 	# MTS
 	# plm
 
+         
+#	 install.packages("ggplot2")
+#	 install.packages("forecast")
+#	 install.packages("astsa")
+#	 install.packages("car")
+#	 install.packages("MTS")
 
-	# install.packages("ggplot2")
-	# install.packages("forecast")
-	# install.packages("astsa")
-	# install.packages("car")
-	# install.packages("MTS")
-
+# Active library
+# ==============
+        library(ggplot2)
+        library(forecast)
+        library(astsa)
+        library(car)
+        library(MTS)
+        library(methods)
+        library(timeDate) 
 # load the packages
+      
 
 	require(ggplot2)
 	require(forecast)
